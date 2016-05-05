@@ -201,7 +201,7 @@
             
                 <div class="postShorten-content" itemprop="articleBody">
                     <p>去年底做 Android 客户端开发的时候，服务端的开发进度始终跟不上，就找了一个测试服务器框架 <a href="https://github.com/dreamhead/moco" target="_blank" rel="external">Moco</a>, 自己搭建测试服务器生成 Json 格式的响应，用来测试Android代码。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1131647-36cacdc484704e7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Moco - 2013 年 Duke&#39;s Choice Awards，Moco 被提名为最具创新力的Java 项目之一"></p>
+<p><img src="https://drops.azureedge.net/drops/files/acc_478785/waPF?sr=b&amp;sp=r&amp;sv=2014-02-14&amp;st=2016-05-05T15%3A55%3A14Z&amp;se=2016-05-05T16%3A55%3A14Z&amp;rscd=inline%3B+filename%3DScreen%2520Shot%2520on%25202016-05-06%2520at%252000%253A23%253A04.png&amp;sig=S%2BNu16OzRkV3D7hmoKr4r2NvapdzXpw13eII2l7vKEo%3D" alt="Moco - 2013 年 Duke&#39;s Choice Awards，Moco 被提名为最具创新力的Java 项目之一"></p>
 <p>后来在涉及到创建和删除数据的时候，就没法再继续使用 Moco 的 API 来测试了。第一想法是要不自己做个简易的 Java EE 服务端，但看到 Spring MVC 有点头大，感觉有点小题大做。去 Sring 官网逛了一圈，发现了 <a href="http://projects.spring.io/spring-boot/" target="_blank" rel="external">SpringBoot</a>, 自带 Servlet 容器，运行 Web 运用就像运行一个本地 Java 应用，感觉很方便，把玩了一下觉得还是很不错，简单多了。</p>
 <p>用了用依然还是嫌麻烦，只打算做个App，还要边做边弄  一堆后端的内容，想想就闹心。为了偷懒，继续搜寻了一番，发现了 <a href="https://parse.com/" target="_blank" rel="external">Parse</a> 和 <a href="https://leancloud.cn/" target="_blank" rel="external">LeanCloud</a> 等 PaaS 平台，对于大部分 CRUD 应用，使用平台自带的API已经足够。考虑到网络原因，我选用的 LeanCloud, API 基本跟 Parse 一模一样，控制台的用户体验稍微有点差强人意，自带的 _User 类使用起来有些小 BUG, 写了个应用测试了一下觉得访问速度还行，凑合着先用到。</p>
 <p>没想到年后过来想使用的时候，发现 LeanCloud 上之前测试时建立的数据已经被清空了，今天刚好看到 LeanCloud 官方发来的安全风险提示邮件，不清楚是不是由于安全方面的漏洞导致的。所以说数据放在别人手里，始终还是有风险，无论是出于安全性还是稳定性的考虑。</p>
@@ -252,7 +252,7 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <p>#Mac使用心得<br>感谢老婆送的生日礼物 MacBook Pro，使用快两个月了，基本上每天都会高呼一遍『 MacBook 真的太好用啦！』^_^</p>
+                    <p>感谢老婆送的生日礼物 MacBook Pro，使用快两个月了，基本上每天都会高呼一遍『 MacBook 真的太好用啦！』^_^</p>
 <p>之前曾数次将老笔记本和 PC 装上 Ubuntu，但几个回合下来，臣妾真的做不到啊……一个 NVIDIA 的显卡驱动装了一天未果，面对着各种拖影和闪烁欲哭无泪。现在回想起来，可能是因为我并没有摆脱 Windows 下的操作习惯，首先想的就是先整个 GUI 安抚一下自己忐忑的玻璃心。</p>
 <p>然后就是被各种 Shell 命令折腾，只记住了 apt-get 相关的一些，还有就是个 sudo……</p>
 <p>拿到 MacBook 后，一开始也抓瞎了好多天，但是每次看到那精致的设计，那极其符合审美口味的界面，都告诉自己一定要尽快把它玩转。</p>
@@ -269,7 +269,7 @@
 <li><a href="https://www.alfredapp.com" target="_blank" rel="external">Alfred</a></li>
 </ul>
 <p><img src="https://www.alfredapp.com/media/pages/home/search@2x.png" alt="Alfred Logo"></p>
-<p>这个必须毫无争议地位列神器排行榜第一，也是在我看来从 Windows 操作系统转到OS X后应该第一时间了解和学习的软件。</p>
+<p>这个必须毫无争议地位列神器排行榜第一，也是在我看来从 Windows 操作系统转到 OS X 后应该第一时间了解和学习的软件。</p>
 <p>将这个作为切入点有助于首先放空 Windows 在头脑中建立多年的根深蒂固的操作习惯，从用鼠标点击桌面/开始菜单图标的习惯过渡到通过输入文字进行应用程序的启动、文件的读取、网页的开启，这是一个非常有趣的转变，一开始可能会觉得有一点不习惯，但是不需要多久，就会发现这种方式不知道比拿起鼠标——寻找桌面图标——点击图标这过程快了多少倍，尤其是在桌面乱如麻的盛况下。这个细微的习惯的转变对于小白用户后期认识和学习 Shell 也是一个非常好的打基础的过程。</p>
 <p>Alfred 如果需要使用 Workflow 的话需要收费，我现在暂时没有深入把玩，已经觉得很有用了。OS X 自带的 Sportlight 和 Alfred 性质一样但扩展性不如后者，我个人感觉对拼音模糊搜索的功能比 Alfred 更好一点。</p>
 <p>在习惯这种操作方式之后，已经停不下来了。经过寻觅，发现在 Windows 下有类似的软件 <a href="http://www.getwox.com" target="_blank" rel="external">Wox</a>, 果断入手，之前的版本 BUG 颇多且在 Win10 下经常崩溃，最新的貌似已经修复。</p>
