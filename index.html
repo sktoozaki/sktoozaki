@@ -196,10 +196,10 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <p>去年底做 Android 客户端开发的时候，服务端的开发进度始终跟不上，就找了一个测试服务器框架 <a href="https://github.com/dreamhead/moco" target="_blank" rel="external">Moco</a>, 自己搭建测试服务器生成 Json 格式的响应，用来测试Android代码。</p>
+                    <p>去年底做 Android 客户端开发的时候，服务端的开发进度始终跟不上，就找了一个测试服务器框架 <a href="https://github.com/dreamhead/moco" target="_blank" rel="external">Moco</a>, 自己搭建测试服务器生成 Json 格式的响应，用来测试 Android 代码。</p>
 <p><img src="https://drops.azureedge.net/drops/files/acc_478785/waPF?sr=b&amp;sp=r&amp;sv=2014-02-14&amp;st=2016-05-05T15%3A55%3A14Z&amp;se=2016-05-05T16%3A55%3A14Z&amp;rscd=inline%3B+filename%3DScreen%2520Shot%2520on%25202016-05-06%2520at%252000%253A23%253A04.png&amp;sig=S%2BNu16OzRkV3D7hmoKr4r2NvapdzXpw13eII2l7vKEo%3D" alt="Moco - 2013 年 Duke&#39;s Choice Awards，Moco 被提名为最具创新力的Java 项目之一"></p>
 <p>后来在涉及到创建和删除数据的时候，就没法再继续使用 Moco 的 API 来测试了。第一想法是要不自己做个简易的 Java EE 服务端，但看到 Spring MVC 有点头大，感觉有点小题大做。去 Sring 官网逛了一圈，发现了 <a href="http://projects.spring.io/spring-boot/" target="_blank" rel="external">SpringBoot</a>, 自带 Servlet 容器，运行 Web 运用就像运行一个本地 Java 应用，感觉很方便，把玩了一下觉得还是很不错，简单多了。</p>
-<p>用了用依然还是嫌麻烦，只打算做个App，还要边做边弄  一堆后端的内容，想想就闹心。为了偷懒，继续搜寻了一番，发现了 <a href="https://parse.com/" target="_blank" rel="external">Parse</a> 和 <a href="https://leancloud.cn/" target="_blank" rel="external">LeanCloud</a> 等 PaaS 平台，对于大部分 CRUD 应用，使用平台自带的API已经足够。考虑到网络原因，我选用的 LeanCloud, API 基本跟 Parse 一模一样，控制台的用户体验稍微有点差强人意，自带的 _User 类使用起来有些小 BUG, 写了个应用测试了一下觉得访问速度还行，凑合着先用到。</p>
+<p>用了用依然还是嫌麻烦，只打算做个 App，还要边做边弄  一堆后端的内容，想想就闹心。为了偷懒，继续搜寻了一番，发现了 <a href="https://parse.com/" target="_blank" rel="external">Parse</a> 和 <a href="https://leancloud.cn/" target="_blank" rel="external">LeanCloud</a> 等 PaaS 平台，对于大部分 CRUD 应用，使用平台自带的 API 已经足够。考虑到网络原因，我选用的 LeanCloud, API 基本跟 Parse 一模一样，控制台的用户体验稍微有点差强人意，自带的 _User 类使用起来有些小 BUG, 写了个应用测试了一下觉得访问速度还行，凑合着先用到。</p>
 <p>没想到年后过来想使用的时候，发现 LeanCloud 上之前测试时建立的数据已经被清空了，今天刚好看到 LeanCloud 官方发来的安全风险提示邮件，不清楚是不是由于安全方面的漏洞导致的。所以说数据放在别人手里，始终还是有风险，无论是出于安全性还是稳定性的考虑。</p>
 <p>之前一直关注着 Parse,  1月底的时候知晓 Facebook 已将 Parse开源，整体业务在6月结束，官网之前有一份公告，提示用户将所有应用的数据进行迁移，同时给出了详尽的建立本地 Server 的流程和迁移指南，于是决定在本地建立 Parse-Server，用来作为 App 的后端。</p>
 
@@ -326,7 +326,7 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <p>服务端采用WCF时，.net的开发环境可以根据WSDL文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。<br>但是基于JAVA的安卓开发环境下就只有采用第三方的工具了，在网上查找CXF和Axis等相关技术后，发现由于底层JVM和Dalvik的内部差异，生成的JAVA客户端代理类在安卓开发环境中并不能使用。<br>经过多方寻觅，终于发现一个国外的好东东—————<a href="http://wsdl2code.com/pages/home.aspx" target="_blank" rel="external">Wsdl2Code</a></p>
+                    <p>服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。<br>但是基于 JAVA 的安卓开发环境下就只有采用第三方的工具了，在网上查找 CXF 和 Axis 等相关技术后，发现由于底层 JVM 和 Dalvik 的内部差异，生成的 JAVA 客户端代理类在安卓开发环境中并不能使用。<br>经过多方寻觅，终于发现一个国外的好东东—————<a href="http://wsdl2code.com/pages/home.aspx" target="_blank" rel="external">Wsdl2Code</a></p>
 <p><strong>看简介</strong></p>
 <blockquote>
 <p>Wsdl2Code is a web tool that helps developers consume .net web services. </p>
