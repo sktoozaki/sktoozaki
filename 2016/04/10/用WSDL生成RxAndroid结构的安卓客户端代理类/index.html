@@ -6,21 +6,24 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="KK的博客">
-    <title>用WSDL生成RxAndroid结构的安卓客户端代理类 - KK的博客</title>
+    <title>用WSDL生成安卓客户端代理类 - KK的博客</title>
     <meta name="author" content="Jean.KK">
     
     
     
-    <meta name="description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。但是基于 JAVA 的安卓开发环境下就只有采用第三方的工具了，在网上查找 CXF 和 Axis 等相关技术后，发现由于底层 JVM 和 Dalvik 的内部差异，生成的 JAVA 客户端代理类在安卓开发环境中并不能使用。经过多方寻觅，终于发现一个国外的好东东—————">
+    <meta name="description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。
+但是基于 Java 的安卓开发环境下就只有采用第三方的工具了，在网上查找 CXF 和 Axis 等相关技术后，发现由于底层 JVM 和 Dalvik 的内部差异，生成的 Java 客户端代理类在安卓开发环境中并不能使用。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="用WSDL生成RxAndroid结构的安卓客户端代理类">
+<meta property="og:title" content="用WSDL生成安卓客户端代理类">
 <meta property="og:url" content="http://yoursite.com/2016/04/10/用WSDL生成RxAndroid结构的安卓客户端代理类/index.html">
 <meta property="og:site_name" content="KK的博客">
-<meta property="og:description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。但是基于 JAVA 的安卓开发环境下就只有采用第三方的工具了，在网上查找 CXF 和 Axis 等相关技术后，发现由于底层 JVM 和 Dalvik 的内部差异，生成的 JAVA 客户端代理类在安卓开发环境中并不能使用。经过多方寻觅，终于发现一个国外的好东东—————">
-<meta property="og:updated_time" content="2016-05-08T13:11:34.000Z">
+<meta property="og:description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。
+但是基于 Java 的安卓开发环境下就只有采用第三方的工具了，在网上查找 CXF 和 Axis 等相关技术后，发现由于底层 JVM 和 Dalvik 的内部差异，生成的 Java 客户端代理类在安卓开发环境中并不能使用。">
+<meta property="og:updated_time" content="2016-05-09T11:14:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用WSDL生成RxAndroid结构的安卓客户端代理类">
-<meta name="twitter:description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。但是基于 JAVA 的安卓开发环境下就只有采用第三方的工具了，在网上查找 CXF 和 Axis 等相关技术后，发现由于底层 JVM 和 Dalvik 的内部差异，生成的 JAVA 客户端代理类在安卓开发环境中并不能使用。经过多方寻觅，终于发现一个国外的好东东—————">
+<meta name="twitter:title" content="用WSDL生成安卓客户端代理类">
+<meta name="twitter:description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。
+但是基于 Java 的安卓开发环境下就只有采用第三方的工具了，在网上查找 CXF 和 Axis 等相关技术后，发现由于底层 JVM 和 Dalvik 的内部差异，生成的 Java 客户端代理类在安卓开发环境中并不能使用。">
     
     
         
@@ -74,7 +77,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                    <span class="sidebar-button-desc">Home</span>
+                    <span class="sidebar-button-desc">首页</span>
                 </a>
         </li>
         
@@ -86,7 +89,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                    <span class="sidebar-button-desc">Categories</span>
+                    <span class="sidebar-button-desc">分类</span>
                 </a>
         </li>
         
@@ -98,7 +101,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                    <span class="sidebar-button-desc">Tags</span>
+                    <span class="sidebar-button-desc">标签</span>
                 </a>
         </li>
         
@@ -110,7 +113,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archives</span>
+                    <span class="sidebar-button-desc">归档</span>
                 </a>
         </li>
         
@@ -122,7 +125,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                    <span class="sidebar-button-desc">About</span>
+                    <span class="sidebar-button-desc">关于</span>
                 </a>
         </li>
         
@@ -136,22 +139,6 @@
                 
                     <i class="sidebar-button-icon fa fa-lg fa-github"></i>
                     <span class="sidebar-button-desc">GitHub</span>
-                </a>
-        </li>
-        
-    </ul>
-    
-        <ul class="sidebar-buttons">
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
-                         href="/atom.xml"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
-                    <span class="sidebar-button-desc">RSS</span>
                 </a>
         </li>
         
@@ -171,17 +158,17 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            用WSDL生成RxAndroid结构的安卓客户端代理类
+            用WSDL生成安卓客户端代理类
         </h1>
     
     <div class="post-meta">
     <time itemprop="datePublished" content="Sun Apr 10 2016 19:44:44 GMT+0800">
 	
-		    4月 10, 2016
+		    10 4月 2016
     	
     </time>
     
-        <span>in </span>
+        <span>dans </span>
         
     <a class="category-link" href="/categories/Android/">Android</a>
 
@@ -192,8 +179,11 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。<br>但是基于 JAVA 的安卓开发环境下就只有采用第三方的工具了，在网上查找 CXF 和 Axis 等相关技术后，发现由于底层 JVM 和 Dalvik 的内部差异，生成的 JAVA 客户端代理类在安卓开发环境中并不能使用。<br>经过多方寻觅，终于发现一个国外的好东东—————<a href="http://wsdl2code.com/pages/home.aspx" target="_blank" rel="external">Wsdl2Code</a></p>
-<p><strong>看简介</strong></p>
+            <p>服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。</p>
+<p>但是基于 Java 的安卓开发环境下就只有采用第三方的工具了，在网上查找 CXF 和 Axis 等相关技术后，发现由于底层 JVM 和 Dalvik 的内部差异，生成的 Java 客户端代理类在安卓开发环境中并不能使用。</p>
+<a id="more"></a>
+<p>经过多方寻觅，终于发现一个好东东—————<a href="http://wsdl2code.com/pages/home.aspx" target="_blank" rel="external">Wsdl2Code</a>, 支持生成 Android 和 iOs 客户端的代理类。</p>
+<p><strong>简介</strong></p>
 <blockquote>
 <p>Wsdl2Code is a web tool that helps developers consume .net web services. </p>
 <p>Simply insert your Service URL or upload a WSDL file and that’s it.</p>
@@ -201,6 +191,11 @@
 <p>Android generated code works using Ksoap2</p>
 <p>iOs generated code works with Xpathquery , libxml library and NSData+Base64 For Byte Array Support</p>
 </blockquote>
+<p>可以看到首页下方统计了总共生成本地类的总数和给开发者节省的时间，看来也有很多人和我一样不想写那一堆 SOAP 访问的代码 ：）</p>
+<p>大概看了下源码，比较简单，核心是一个封装过的 AsyncTask，对服务的调用在 doInBackground 中进行，调用服务的 InvokeMethord 名称由 WSDL 中的 elment name 决定。</p>
+<p>其他部分就是 KSoap2 的套路：建立 SoapObject， 初始化设置服务的 namespace 和方法，设置 evelope 格式、Version、是否隐含类型等，用 HttpTransportSE.call 建立连接，对返回值 envelop.bodyIn 进行判断处理。</p>
+<p>可以发现 InvokeMethodAsync 是将阻塞操作 InvokeMethod 进行了一层异步包裹，放在了 AsyncTask 内,那么我们可以根据需要对这部分做文章。</p>
+<p>进一步测试后发现提供的 onPostExecute 不能进行主线程上的操作，是一个小缺陷，等后面有时间了来重写一下，顺便加入 RxJava 的元素进去。</p>
 
             
         </div>
@@ -215,14 +210,14 @@
                     <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/03/Mac-使用心得/"  data-tooltip="Mac 使用心得">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PRÉCÉDENT</span>
                 </a>
             </li>
             <li class="post-action">
                 
                     <a class="post-action-btn btn btn--disabled">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">SUIVANT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -286,14 +281,14 @@
                     <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/03/Mac-使用心得/"  data-tooltip="Mac 使用心得">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PRÉCÉDENT</span>
                 </a>
             </li>
             <li class="post-action">
                 
                     <a class="post-action-btn btn btn--disabled">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">SUIVANT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -337,17 +332,17 @@
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/04/10/用WSDL生成RxAndroid结构的安卓客户端代理类/">
-                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+                <i class="fa fa-google-plus"></i><span class="">Partager sur Google Plus</span>
             </a>
         </li>
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/04/10/用WSDL生成RxAndroid结构的安卓客户端代理类/">
-                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+                <i class="fa fa-facebook-official"></i><span>Partager sur Facebook</span>
             </a>
         </li>
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/04/10/用WSDL生成RxAndroid结构的安卓客户端代理类/">
-                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+                <i class="fa fa-twitter"></i><span>Partager sur Twitter</span>
             </a>
         </li>
     </ul>
