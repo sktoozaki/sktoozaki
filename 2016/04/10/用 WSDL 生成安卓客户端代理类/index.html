@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="JeanKK的博客">
 <meta property="og:description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。
 但是基于 Java 的安卓开发环境下就只有采用第三方的工具了，在网上查找 CXF 和 Axis 等相关技术后，发现由于底层 JVM 和 Dalvik 的内部差异，生成的 Java 客户端代理类在安卓开发环境中并不能使用。">
-<meta property="og:updated_time" content="2016-05-14T12:43:08.000Z">
+<meta property="og:updated_time" content="2016-05-19T15:37:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用 WSDL 生成安卓客户端代理类">
 <meta name="twitter:description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。
@@ -202,11 +202,11 @@
 <p>Android generated code works using Ksoap2</p>
 <p>iOs generated code works with Xpathquery , libxml library and NSData+Base64 For Byte Array Support</p>
 </blockquote>
-<p>可以看到首页下方统计了总共生成本地类的总数和给开发者节省的时间，看来也有很多人和我一样不想写那一堆 SOAP 访问的代码 ：）</p>
+<p>可以看到首页下方统计了总共生成本地类的总数和给开发者节省的时间，看来也有很多懒人和我一样不想写那一堆 SOAP 访问的代码 ：）</p>
 <p>大概看了下源码，比较简单，核心是一个封装过的 AsyncTask，对服务的调用在 doInBackground 中进行，调用服务的 InvokeMethord 名称由 WSDL 中的 elment name 决定。</p>
 <p>其他部分就是 KSoap2 的套路：建立 SoapObject， 初始化设置服务的 namespace 和方法，设置 evelope 格式、Version、是否隐含类型等，用 HttpTransportSE.call 建立连接，对返回值 envelop.bodyIn 进行判断处理。</p>
 <p>可以发现 InvokeMethodAsync 是将阻塞操作 InvokeMethod 进行了一层异步包裹，放在了 AsyncTask 内,那么我们可以根据需要对这部分做文章。</p>
-<p>进一步测试后发现提供的 onPostExecute 不能进行主线程上的操作，是一个小缺陷，等后面有时间了来重写一下，顺便加入 RxJava 的元素进去。</p>
+<p>进一步测试后发现实现接口提供的 onError()、onPostExecute() 回调并不位于 Android 主线程，是一个小小的缺陷，等后面有时间了来修改一下。</p>
 
             
         </div>
