@@ -11,24 +11,24 @@
     
     
     
-    <meta name="description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。
-但是基于 Java 的安卓开发环境下就只有采用第三方的工具了，在网上查找 CXF 和 Axis 等相关技术后，发现由于底层 JVM 和 Dalvik 的内部差异，生成的 Java 客户端代理类在安卓开发环境中并不能使用。">
+    <meta name="description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="用 WSDL 生成安卓客户端代理类">
-<meta property="og:url" content="http://yoursite.com/2016/04/10/用 WSDL 生成安卓客户端代理类/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/index.html">
 <meta property="og:site_name" content="JeanKK的博客">
-<meta property="og:description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。
-但是基于 Java 的安卓开发环境下就只有采用第三方的工具了，在网上查找 CXF 和 Axis 等相关技术后，发现由于底层 JVM 和 Dalvik 的内部差异，生成的 Java 客户端代理类在安卓开发环境中并不能使用。">
-<meta property="og:updated_time" content="2016-05-19T15:37:49.000Z">
+<meta property="og:description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。">
+<meta property="og:updated_time" content="2016-05-20T15:13:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用 WSDL 生成安卓客户端代理类">
-<meta name="twitter:description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。
-但是基于 Java 的安卓开发环境下就只有采用第三方的工具了，在网上查找 CXF 和 Axis 等相关技术后，发现由于底层 JVM 和 Dalvik 的内部差异，生成的 Java 客户端代理类在安卓开发环境中并不能使用。">
+<meta name="twitter:description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。">
     
     
         
     
     
+    
+        <meta property="og:image" content="https://pbs.twimg.com/profile_images/661679787799265280/BokwoEaG.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://pbs.twimg.com/profile_images/661679787799265280/BokwoEaG.png" />
     
     
     
@@ -173,9 +173,9 @@
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sun Apr 10 2016 19:44:44 GMT+0800">
+    <time itemprop="datePublished" content="Fri May 20 2016 22:21:39 GMT+0800">
 	
-		    4月 10, 2016
+		    5月 20, 2016
     	
     </time>
     
@@ -191,8 +191,8 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <p>服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。</p>
-<p>但是基于 Java 的安卓开发环境下就只有采用第三方的工具了，在网上查找 CXF 和 Axis 等相关技术后，发现由于底层 JVM 和 Dalvik 的内部差异，生成的 Java 客户端代理类在安卓开发环境中并不能使用。</p>
 <a id="more"></a>
+<p>但是基于 Java 的安卓开发环境下就只有采用第三方的工具了，在网上查找 CXF 和 Axis 等相关技术后，发现由于底层 JVM 和 Dalvik 的内部差异，生成的 Java 客户端代理类在安卓开发环境中并不能使用。</p>
 <p>经过多方寻觅，终于发现一个好东东—————<a href="http://wsdl2code.com/pages/home.aspx" target="_blank" rel="external">Wsdl2Code</a>, 支持生成 Android 和 iOs 客户端的代理类。</p>
 <p><strong>简介</strong></p>
 <blockquote>
@@ -225,7 +225,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/03/Mac-使用心得/"  data-tooltip="Mac 使用心得">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -233,7 +233,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/05/CRUD 应用服务端的替代解决方案探索/" data-tooltip="CRUD 应用服务端的替代解决方案探索">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -248,17 +248,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/04/10/用 WSDL 生成安卓客户端代理类/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/04/10/用 WSDL 生成安卓客户端代理类/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/04/10/用 WSDL 生成安卓客户端代理类/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -325,7 +325,7 @@ s.setAttribute('data-timestamp', +new Date());
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/03/Mac-使用心得/"  data-tooltip="Mac 使用心得">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -333,7 +333,7 @@ s.setAttribute('data-timestamp', +new Date());
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/05/CRUD 应用服务端的替代解决方案探索/" data-tooltip="CRUD 应用服务端的替代解决方案探索">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -348,17 +348,17 @@ s.setAttribute('data-timestamp', +new Date());
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/04/10/用 WSDL 生成安卓客户端代理类/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/04/10/用 WSDL 生成安卓客户端代理类/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/04/10/用 WSDL 生成安卓客户端代理类/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -384,17 +384,17 @@ s.setAttribute('data-timestamp', +new Date());
                 <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/04/10/用 WSDL 生成安卓客户端代理类/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/04/10/用 WSDL 生成安卓客户端代理类/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/04/10/用 WSDL 生成安卓客户端代理类/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
@@ -439,9 +439,9 @@ s.setAttribute('data-timestamp', +new Date());
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://yoursite.com/2016/04/10/用 WSDL 生成安卓客户端代理类/';
+                 this.page.url = 'http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/';
                  
-                    this.page.identifier = '2016/04/10/用 WSDL 生成安卓客户端代理类/';
+                    this.page.identifier = '2016/05/20/用 WSDL 生成安卓客户端代理类/';
                                   
              };
             (function() {
