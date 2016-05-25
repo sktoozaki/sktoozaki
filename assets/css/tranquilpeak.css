@@ -627,8 +627,8 @@ blockquote {
     left: -75px;
     width: 75px; }
     #sidebar[data-behavior="2"] .sidebar-profile .sidebar-profile-picture, #sidebar[data-behavior="4"] .sidebar-profile .sidebar-profile-picture {
-      width: 30px;
-      height: 30px;
+      width: 45px;
+      height: 45px;
       line-height: 30px;
       vertical-align: middle;
       border-radius: 30px; }
@@ -659,8 +659,8 @@ blockquote {
   #sidebar[data-behavior="1"], #sidebar[data-behavior="2"] {
     width: 75px; }
     #sidebar[data-behavior="1"] .sidebar-profile .sidebar-profile-picture, #sidebar[data-behavior="2"] .sidebar-profile .sidebar-profile-picture {
-      width: 30px;
-      height: 30px;
+      width: 45px;
+      height: 45px;
       line-height: 30px;
       vertical-align: middle;
       border-radius: 30px; }
@@ -733,8 +733,8 @@ blockquote {
     left: -75px;
     width: 75px; }
     #sidebar[data-behavior="4"] .sidebar-profile .sidebar-profile-picture {
-      width: 30px;
-      height: 30px;
+      width: 45px;
+      height: 45px;
       line-height: 30px;
       vertical-align: middle;
       border-radius: 30px; }
@@ -807,8 +807,8 @@ blockquote {
   #sidebar[data-behavior="2"] {
     width: 75px; }
     #sidebar[data-behavior="2"] .sidebar-profile .sidebar-profile-picture {
-      width: 30px;
-      height: 30px;
+      width: 45px;
+      height: 45px;
       line-height: 30px;
       vertical-align: middle;
       border-radius: 30px; }
@@ -881,8 +881,8 @@ blockquote {
     left: -75px;
     width: 75px; }
     #sidebar[data-behavior="4"] .sidebar-profile .sidebar-profile-picture {
-      width: 30px;
-      height: 30px;
+      width: 45px;
+      height: 45px;
       line-height: 30px;
       vertical-align: middle;
       border-radius: 30px; }
@@ -2585,10 +2585,8 @@ figure.highlight,
   .codeblock.swift .number,
   .codeblock.swift .type {
     color: #0086b3; }
-  figure.highlight.yml .line
-.attr,
-  .codeblock.yml .line
-.attr {
+  figure.highlight.yml .line .attr,
+  .codeblock.yml .line .attr {
     color: #63a35c; }
   figure.highlight.yml .line,
   figure.highlight.yml .string,
