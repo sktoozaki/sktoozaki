@@ -6,21 +6,30 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="JeanKK的博客">
-    <title>CRUD 应用服务端的替代解决方案探索 - JeanKK的博客</title>
+    <title>重拾树莓派2 - JeanKK的博客</title>
     <meta name="author" content="JeanKK">
     
     
     
-    <meta name="description" content="去年底做 Android 客户端开发的时候，找了一个测试服务器框架 Moco, 自己搭建测试服务器生成 Json 格式的响应，用来测试 Android 代码。">
+    <meta name="description" content="安装 oh-my-zsh首先安装 zsh：sudo apt-get install zsh
+安装 oh-my-zsh:
+sh -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;
+修改默认 Shell 为 zsh:chsh—-/bin">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="CRUD 应用服务端的替代解决方案探索">
-<meta property="og:url" content="http://yoursite.com/2016/05/05/CRUD 应用服务端的替代解决方案探索/index.html">
+<meta property="og:title" content="重拾树莓派2">
+<meta property="og:url" content="http://yoursite.com/2016/05/26/重拾树莓派2/index.html">
 <meta property="og:site_name" content="JeanKK的博客">
-<meta property="og:description" content="去年底做 Android 客户端开发的时候，找了一个测试服务器框架 Moco, 自己搭建测试服务器生成 Json 格式的响应，用来测试 Android 代码。">
-<meta property="og:updated_time" content="2016-05-23T14:13:45.000Z">
+<meta property="og:description" content="安装 oh-my-zsh首先安装 zsh：sudo apt-get install zsh
+安装 oh-my-zsh:
+sh -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;
+修改默认 Shell 为 zsh:chsh—-/bin">
+<meta property="og:updated_time" content="2016-05-26T14:51:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CRUD 应用服务端的替代解决方案探索">
-<meta name="twitter:description" content="去年底做 Android 客户端开发的时候，找了一个测试服务器框架 Moco, 自己搭建测试服务器生成 Json 格式的响应，用来测试 Android 代码。">
+<meta name="twitter:title" content="重拾树莓派2">
+<meta name="twitter:description" content="安装 oh-my-zsh首先安装 zsh：sudo apt-get install zsh
+安装 oh-my-zsh:
+sh -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;
+修改默认 Shell 为 zsh:chsh—-/bin">
     
     
         
@@ -29,8 +38,8 @@
         <meta property="og:image" content="https://www.gravatar.com/avatar/fbe61fe55467e003a6b04d472979e660?s=640"/>
     
     
-        <meta property="og:image" content="http://res.cloudinary.com/digxespf3/image/upload/v1464012789/moco-logo_t1ztcq.png"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://res.cloudinary.com/digxespf3/image/upload/v1464012789/moco-logo_t1ztcq.png" />
+        <meta property="og:image" content="https://www.adafruit.com/includes/templates/adafruit2013/images/pi_logo.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://www.adafruit.com/includes/templates/adafruit2013/images/pi_logo.png" />
     
     
     
@@ -184,13 +193,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            CRUD 应用服务端的替代解决方案探索
+            重拾树莓派2
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Thu May 05 2016 23:50:20 GMT+0800">
+    <time itemprop="datePublished" content="Thu May 26 2016 22:42:34 GMT+0800">
 	
-		    5月 05, 2016
+		    5月 26, 2016
     	
     </time>
     
@@ -205,12 +214,18 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>去年底做 Android 客户端开发的时候，找了一个测试服务器框架 <a href="https://github.com/dreamhead/moco" target="_blank" rel="external">Moco</a>, 自己搭建测试服务器生成 Json 格式的响应，用来测试 Android 代码。</p>
-<a id="more"></a>
-<p>后来在涉及到创建和删除数据的时候，就没法再继续使用 Moco 的 API 来测试了。第一想法是要不自己做个简易的 Java EE 服务端，但看到 Spring MVC 有点头大，感觉有点小题大做。去 Sring 官网逛了一圈，发现了 <a href="http://projects.spring.io/spring-boot/" target="_blank" rel="external">SpringBoot</a>, 自带 Servlet 容器，运行 Web 运用就像运行一个本地 Java 应用，感觉很方便，把玩了一下觉得还是很不错，简单多了。</p>
-<p>用了用依然还是嫌麻烦，只打算做个 App，还要边做边弄  一堆后端的内容，想想就闹心。为了偷懒，继续搜寻了一番，发现了 <a href="https://parse.com/" target="_blank" rel="external">Parse</a> 和 <a href="https://leancloud.cn/" target="_blank" rel="external">LeanCloud</a> 等 PaaS 平台，对于大部分 CRUD 应用，使用平台自带的 API 已经足够。考虑到网络原因，我选用的 LeanCloud, API 基本跟 Parse 一模一样，控制台的用户体验稍微有点差强人意，自带的 _User 类使用起来有些小 BUG, 写了个应用测试了一下觉得访问速度还行，凑合着先用到。</p>
-<p>没想到年后过来想使用的时候，发现 LeanCloud 上之前测试时建立的数据已经被清空了，今天刚好看到 LeanCloud 官方发来的安全风险提示邮件，不清楚是不是由于安全方面的漏洞导致的。所以说数据放在别人手里，始终还是有风险，无论是出于安全性还是稳定性的考虑。</p>
-<p>之前一直关注着 Parse,  1月底的时候知晓 Facebook 已将 Parse开源，整体业务在17年1月结束，官网之前有一份公告，提示用户将所有应用的数据进行迁移，同时给出了详尽的建立本地 Server 的流程和迁移指南，于是决定在本地建立 Parse-Server，用来作为 App 的后端。</p>
+            <h2 id="安装-oh-my-zsh"><a href="#安装-oh-my-zsh" class="headerlink" title="安装 oh-my-zsh"></a>安装 oh-my-zsh</h2><p>首先安装 zsh：<code>sudo apt-get install zsh</code></p>
+<p>安装 oh-my-zsh:</p>
+<p><code>sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code></p>
+<p>修改默认 Shell 为 zsh:<code>chsh</code>—-<code>/bin/zsh</code></p>
+<h2 id="安装中文字体与输入法"><a href="#安装中文字体与输入法" class="headerlink" title="安装中文字体与输入法"></a>安装中文字体与输入法</h2><p>安装中文字体：<code>sudo apt-get install ttf-wqy-zenhei</code></p>
+<p>安装输入法：<code>sudo apt-get install scim-pinyin</code></p>
+<p>打开配置文件：<code>sudo raspi-config</code></p>
+<p>设置 Localization 内选项</p>
+<h2 id="安装-Vim"><a href="#安装-Vim" class="headerlink" title="安装 Vim"></a>安装 Vim</h2><p><code>install vim</code></p>
+<p>因为懒，这里已经在<code>.zshrc</code>中设置了<code>alias install=&quot;sudo apt-get install&quot;</code></p>
+<h2 id="安装-VNC"><a href="#安装-VNC" class="headerlink" title="安装 VNC"></a>安装 VNC</h2><p>因为 TeamViewer 不支持 ARM 架构，所以只有使用 VNC 了。</p>
+<p><code>install tightvncserver</code></p>
 
             
         </div>
@@ -220,7 +235,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">标签</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/服务端/">服务端</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/树莓派/">树莓派</a>
 
             </div>
         
@@ -229,7 +244,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/20/用 WSDL 生成安卓客户端代理类/"  data-tooltip="用 WSDL 生成安卓客户端代理类">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -237,7 +252,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/03/Mac-使用心得/" data-tooltip="Mac 使用心得">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/22/该不该学习设计模式/" data-tooltip="该不该学习设计模式">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -252,17 +267,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/05/CRUD 应用服务端的替代解决方案探索/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/26/重拾树莓派2/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/05/CRUD 应用服务端的替代解决方案探索/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/26/重拾树莓派2/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/05/05/CRUD 应用服务端的替代解决方案探索/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/05/26/重拾树莓派2/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -329,7 +344,7 @@ s.setAttribute('data-timestamp', +new Date());
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/20/用 WSDL 生成安卓客户端代理类/"  data-tooltip="用 WSDL 生成安卓客户端代理类">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -337,7 +352,7 @@ s.setAttribute('data-timestamp', +new Date());
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/03/Mac-使用心得/" data-tooltip="Mac 使用心得">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/22/该不该学习设计模式/" data-tooltip="该不该学习设计模式">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -352,17 +367,17 @@ s.setAttribute('data-timestamp', +new Date());
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/05/CRUD 应用服务端的替代解决方案探索/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/26/重拾树莓派2/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/05/CRUD 应用服务端的替代解决方案探索/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/26/重拾树莓派2/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/05/05/CRUD 应用服务端的替代解决方案探索/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/05/26/重拾树莓派2/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -388,17 +403,17 @@ s.setAttribute('data-timestamp', +new Date());
                 <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/05/CRUD 应用服务端的替代解决方案探索/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/26/重拾树莓派2/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/05/CRUD 应用服务端的替代解决方案探索/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/26/重拾树莓派2/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/05/05/CRUD 应用服务端的替代解决方案探索/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/05/26/重拾树莓派2/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
@@ -450,9 +465,9 @@ s.setAttribute('data-timestamp', +new Date());
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://yoursite.com/2016/05/05/CRUD 应用服务端的替代解决方案探索/';
+                 this.page.url = 'http://yoursite.com/2016/05/26/重拾树莓派2/';
                  
-                    this.page.identifier = '2016/05/05/CRUD 应用服务端的替代解决方案探索/';
+                    this.page.identifier = '2016/05/26/重拾树莓派2/';
                                   
              };
             (function() {
