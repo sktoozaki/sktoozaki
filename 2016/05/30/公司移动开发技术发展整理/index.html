@@ -6,29 +6,31 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="JeanKK的博客">
-    <title>用 WSDL 生成安卓客户端代理类 - JeanKK的博客</title>
+    <title>公司移动开发技术发展整理 - JeanKK的博客</title>
     <meta name="author" content="JeanKK">
     
     
     
-    <meta name="description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。">
+    <meta name="description" content="前几天公司BOSS让整理一下各部门技术发展的现状、趋势以及经验教训，粗略总结了一个梗概。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="用 WSDL 生成安卓客户端代理类">
-<meta property="og:url" content="http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/index.html">
+<meta property="og:title" content="公司移动开发技术发展整理">
+<meta property="og:url" content="http://yoursite.com/2016/05/30/公司移动开发技术发展整理/index.html">
 <meta property="og:site_name" content="JeanKK的博客">
-<meta property="og:description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。">
-<meta property="og:updated_time" content="2016-05-20T15:13:23.000Z">
+<meta property="og:description" content="前几天公司BOSS让整理一下各部门技术发展的现状、趋势以及经验教训，粗略总结了一个梗概。">
+<meta property="og:image" content="http://res.cloudinary.com/digxespf3/image/upload/v1464619142/项目计划_aofkft.png">
+<meta property="og:updated_time" content="2016-05-30T15:02:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用 WSDL 生成安卓客户端代理类">
-<meta name="twitter:description" content="服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。">
+<meta name="twitter:title" content="公司移动开发技术发展整理">
+<meta name="twitter:description" content="前几天公司BOSS让整理一下各部门技术发展的现状、趋势以及经验教训，粗略总结了一个梗概。">
+<meta name="twitter:image" content="http://res.cloudinary.com/digxespf3/image/upload/v1464619142/项目计划_aofkft.png">
     
     
         
     
     
     
-        <meta property="og:image" content="https://pbs.twimg.com/profile_images/661679787799265280/BokwoEaG.png"/>
-        <meta class="swiftype" name="image" data-type="enum" content="https://pbs.twimg.com/profile_images/661679787799265280/BokwoEaG.png" />
+        <meta property="og:image" content="http://previews.123rf.com/images/carmendorin/carmendorin1311/carmendorin131100288/24056658-Grunge-rubber-stamp-with-word-Improve-vector-illustration-Stock-Vector.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://previews.123rf.com/images/carmendorin/carmendorin1311/carmendorin131100288/24056658-Grunge-rubber-stamp-with-word-Improve-vector-illustration-Stock-Vector.jpg" />
     
     
     
@@ -169,13 +171,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            用 WSDL 生成安卓客户端代理类
+            公司移动开发技术发展整理
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Fri May 20 2016 22:21:39 GMT+0800">
+    <time itemprop="datePublished" content="Mon May 30 2016 22:04:02 GMT+0800">
 	
-		    5月 20, 2016
+		    5月 30, 2016
     	
     </time>
     
@@ -190,42 +192,21 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>服务端采用 WCF 时，.net 的开发环境可以根据 WSDL 文件直接生成客户端代理类，很方便地用类似调用本地方法的方式访问服务。</p>
+            <p>前几天公司BOSS让整理一下各部门技术发展的现状、趋势以及经验教训，粗略总结了一个梗概。</p>
 <a id="more"></a>
-<p>但是基于 Java 的安卓开发环境下就只有采用第三方的工具了，在网上查找 CXF 和 Axis 等相关技术后，发现由于底层 JVM 和 Dalvik 的内部差异，生成的 Java 客户端代理类在安卓开发环境中并不能使用。</p>
-<p>经过多方寻觅，终于发现一个好东东—————<a href="http://wsdl2code.com/pages/home.aspx" target="_blank" rel="external">Wsdl2Code</a>, 支持生成 Android 和 iOs 客户端的代理类。</p>
-<p><strong>简介</strong></p>
-<blockquote>
-<p>Wsdl2Code is a web tool that helps developers consume .net web services. </p>
-<p>Simply insert your Service URL or upload a WSDL file and that’s it.</p>
-<p>The engine will generate the classes and methods for connecting Soap Services From Android and iOs in seconds!</p>
-<p>Android generated code works using Ksoap2</p>
-<p>iOs generated code works with Xpathquery , libxml library and NSData+Base64 For Byte Array Support</p>
-</blockquote>
-<p>可以看到首页下方统计了总共生成本地类的总数和给开发者节省的时间，看来也有很多懒人和我一样不想写那一堆 SOAP 访问的代码 ：）</p>
-<p>大概看了下源码，比较简单，核心是一个封装过的 AsyncTask，对服务的调用在 doInBackground 中进行，调用服务的 InvokeMethord 名称由 WSDL 中的 elment name 决定。</p>
-<p>其他部分就是 KSoap2 的套路：建立 SoapObject， 初始化设置服务的 namespace 和方法，设置 evelope 格式、Version、是否隐含类型等，用 HttpTransportSE.call 建立连接，对返回值 envelop.bodyIn 进行判断处理。</p>
-<p>可以发现 InvokeMethodAsync 是将阻塞操作 InvokeMethod 进行了一层异步包裹，放在了 AsyncTask 内,那么我们可以根据需要对这部分做文章。</p>
-<p>进一步测试后发现实现接口提供的 onError()、onPostExecute() 回调并不位于 Android 主线程，是一个小小的缺陷，等后面有时间了来修改一下。</p>
+<p><img src="http://res.cloudinary.com/digxespf3/image/upload/v1464619142/项目计划_aofkft.png" alt="Pic"></p>
 
             
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
         
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">标签</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/tags/Android/">Android</a>
-
-            </div>
-        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/22/该不该学习设计模式/"  data-tooltip="该不该学习设计模式">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -233,7 +214,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/05/CRUD 应用服务端的替代解决方案探索/" data-tooltip="CRUD 应用服务端的替代解决方案探索">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/26/重拾树莓派/" data-tooltip="重拾树莓派2">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -248,17 +229,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/30/公司移动开发技术发展整理/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/30/公司移动开发技术发展整理/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/05/30/公司移动开发技术发展整理/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -325,7 +306,7 @@ s.setAttribute('data-timestamp', +new Date());
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/22/该不该学习设计模式/"  data-tooltip="该不该学习设计模式">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -333,7 +314,7 @@ s.setAttribute('data-timestamp', +new Date());
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/05/CRUD 应用服务端的替代解决方案探索/" data-tooltip="CRUD 应用服务端的替代解决方案探索">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/26/重拾树莓派/" data-tooltip="重拾树莓派2">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -348,17 +329,17 @@ s.setAttribute('data-timestamp', +new Date());
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/30/公司移动开发技术发展整理/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/30/公司移动开发技术发展整理/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/05/30/公司移动开发技术发展整理/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -384,17 +365,17 @@ s.setAttribute('data-timestamp', +new Date());
                 <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/30/公司移动开发技术发展整理/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/30/公司移动开发技术发展整理/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/05/30/公司移动开发技术发展整理/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
@@ -442,9 +423,9 @@ s.setAttribute('data-timestamp', +new Date());
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://yoursite.com/2016/05/20/用 WSDL 生成安卓客户端代理类/';
+                 this.page.url = 'http://yoursite.com/2016/05/30/公司移动开发技术发展整理/';
                  
-                    this.page.identifier = '2016/05/20/用 WSDL 生成安卓客户端代理类/';
+                    this.page.identifier = '2016/05/30/公司移动开发技术发展整理/';
                                   
              };
             (function() {
