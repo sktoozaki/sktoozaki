@@ -6,20 +6,20 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="JeanKK的博客">
-    <title>重拾树莓派2 - JeanKK的博客</title>
+    <title>重拾树莓派 - JeanKK的博客</title>
     <meta name="author" content="JeanKK">
     
     
     
     <meta name="description" content="去年就入手了树莓派2，装了 Raspbian Wheezy 后感觉系统极不稳定，经常无故重启，后来 Win 10出了 IoT 版本后又试了一下，不知道为啥一直无法识别网络连接，就一直闲置在那儿。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="重拾树莓派2">
+<meta property="og:title" content="重拾树莓派">
 <meta property="og:url" content="http://yoursite.com/2016/05/26/重拾树莓派/index.html">
 <meta property="og:site_name" content="JeanKK的博客">
 <meta property="og:description" content="去年就入手了树莓派2，装了 Raspbian Wheezy 后感觉系统极不稳定，经常无故重启，后来 Win 10出了 IoT 版本后又试了一下，不知道为啥一直无法识别网络连接，就一直闲置在那儿。">
-<meta property="og:updated_time" content="2016-05-26T15:19:55.000Z">
+<meta property="og:updated_time" content="2016-06-01T15:14:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="重拾树莓派2">
+<meta name="twitter:title" content="重拾树莓派">
 <meta name="twitter:description" content="去年就入手了树莓派2，装了 Raspbian Wheezy 后感觉系统极不稳定，经常无故重启，后来 Win 10出了 IoT 版本后又试了一下，不知道为啥一直无法识别网络连接，就一直闲置在那儿。">
     
     
@@ -169,7 +169,7 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            重拾树莓派2
+            重拾树莓派
         </h1>
     
     <div class="post-meta">
@@ -203,8 +203,14 @@
 <p>设置 Localization 内选项</p>
 <h2 id="安装-Vim"><a href="#安装-Vim" class="headerlink" title="安装 Vim"></a>安装 Vim</h2><p><code>install vim</code></p>
 <p>因为懒，这里已经在<code>.zshrc</code>中设置了<code>alias install=&quot;sudo apt-get install&quot;</code></p>
-<h2 id="安装-VNC"><a href="#安装-VNC" class="headerlink" title="安装 VNC"></a>安装 VNC</h2><p>因为 TeamViewer 不支持 ARM 架构，所以只有使用 VNC 了。</p>
-<p><code>install tightvncserver</code></p>
+<h2 id="开启-root-账户："><a href="#开启-root-账户：" class="headerlink" title="开启 root 账户："></a>开启 root 账户：</h2><p><code>sudo passwd root</code></p>
+<p>输入两次密码后解锁 root 账户：</p>
+<p><code>sudo passwd --unlock root</code></p>
+<p>修改 ssh 配置文件：</p>
+<p><code>sudo vim /etc/ssh/sshd_config</code></p>
+<p>修改 <code>PermitRootLogin without-password</code> 为 <code>PermitRootLogin yes</code></p>
+<p>保存后，使用 reboot 命令重启树莓派</p>
+<p>使用 pi@raspeberry 登录后，输入<code>su</code>登录 root 账户</p>
 
             
         </div>
