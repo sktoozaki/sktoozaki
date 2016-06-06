@@ -6,31 +6,29 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="JeanKK的博客">
-    <title>Mac 配置 Apache+MySQL+PHP - JeanKK的博客</title>
+    <title>Jenkins + Git 持续集成初探 - JeanKK的博客</title>
     <meta name="author" content="JeanKK">
     
     
     
-    <meta name="description" content="在 Windows 下开发的时候，不想捣腾配置 Apache + MySQL + PHP, 直接用的是国人开发的 phpStudy, 可以选择 Apache/NGINX, 还可以分别设置软件版本，非常方便，感觉比法国人做的 WampServer 好用。">
+    <meta name="description" content="新项目用 Git 和 Coding 的私有仓库进行代码管理，不想每次本地提交后还要登录服务器去 pull, 原计划用 Coding 的 Webhook 来启动服务器脚本自动拉取最新代码，整了半天未遂，一怒之下决定找个持续集成框架来弄。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Mac 配置 Apache+MySQL+PHP">
-<meta property="og:url" content="http://yoursite.com/2016/06/04/Mac-配置-Apache-MySQL-PHP/index.html">
+<meta property="og:title" content="Jenkins + Git 持续集成初探">
+<meta property="og:url" content="http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/index.html">
 <meta property="og:site_name" content="JeanKK的博客">
-<meta property="og:description" content="在 Windows 下开发的时候，不想捣腾配置 Apache + MySQL + PHP, 直接用的是国人开发的 phpStudy, 可以选择 Apache/NGINX, 还可以分别设置软件版本，非常方便，感觉比法国人做的 WampServer 好用。">
-<meta property="og:image" content="https://www.mamp.info/images/app-icons/icon-mamp.png?m=1386970139">
-<meta property="og:updated_time" content="2016-06-06T15:23:25.000Z">
+<meta property="og:description" content="新项目用 Git 和 Coding 的私有仓库进行代码管理，不想每次本地提交后还要登录服务器去 pull, 原计划用 Coding 的 Webhook 来启动服务器脚本自动拉取最新代码，整了半天未遂，一怒之下决定找个持续集成框架来弄。">
+<meta property="og:updated_time" content="2016-06-06T15:20:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac 配置 Apache+MySQL+PHP">
-<meta name="twitter:description" content="在 Windows 下开发的时候，不想捣腾配置 Apache + MySQL + PHP, 直接用的是国人开发的 phpStudy, 可以选择 Apache/NGINX, 还可以分别设置软件版本，非常方便，感觉比法国人做的 WampServer 好用。">
-<meta name="twitter:image" content="https://www.mamp.info/images/app-icons/icon-mamp.png?m=1386970139">
+<meta name="twitter:title" content="Jenkins + Git 持续集成初探">
+<meta name="twitter:description" content="新项目用 Git 和 Coding 的私有仓库进行代码管理，不想每次本地提交后还要登录服务器去 pull, 原计划用 Coding 的 Webhook 来启动服务器脚本自动拉取最新代码，整了半天未遂，一怒之下决定找个持续集成框架来弄。">
     
     
         
     
     
     
-        <meta property="og:image" content="https://www.mamp.info/images/app-icons/icon-mamppro.png?m=1386970582"/>
-        <meta class="swiftype" name="image" data-type="enum" content="https://www.mamp.info/images/app-icons/icon-mamppro.png?m=1386970582" />
+        <meta property="og:image" content="https://jenkins.io/images/226px-Jenkins_logo.svg.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://jenkins.io/images/226px-Jenkins_logo.svg.png" />
     
     
     
@@ -171,13 +169,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Mac 配置 Apache+MySQL+PHP
+            Jenkins + Git 持续集成初探
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat Jun 04 2016 23:41:39 GMT+0800">
+    <time itemprop="datePublished" content="Mon Jun 06 2016 22:48:28 GMT+0800">
 	
-		    6月 04, 2016
+		    6月 06, 2016
     	
     </time>
     
@@ -192,12 +190,15 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>在 Windows 下开发的时候，不想捣腾配置 Apache + MySQL + PHP, 直接用的是国人开发的 <a href="http://www.phpstudy.net" target="_blank" rel="external">phpStudy</a>, 可以选择 Apache/NGINX, 还可以分别设置软件版本，非常方便，感觉比法国人做的 <a href="http://www.wampserver.com/en/" target="_blank" rel="external">WampServer</a> 好用。</p>
+            <p>新项目用 Git 和 Coding 的私有仓库进行代码管理，不想每次本地提交后还要登录服务器去 pull, 原计划用 Coding 的 Webhook 来启动服务器脚本自动拉取最新代码，整了半天未遂，一怒之下决定找个持续集成框架来弄。</p>
 <a id="more"></a>
-<p><img src="https://www.mamp.info/images/app-icons/icon-mamp.png?m=1386970139" alt="MAMP"></p>
-<p>在 OS X 下，也有类似如 <a href="https://www.mamp.info/en/" target="_blank" rel="external">MAMP</a> 和 <a href="https://www.apachefriends.org/zh_cn/index.html" target="_blank" rel="external">XAMPP</a>. 不过 OS X El Captian自带了 Apache 和 PHP，方便了不少，索性安装 MySQL 来配置一番。</p>
-<blockquote>
-</blockquote>
+<p>作为 JetBrains 的脑残粉，首先是打算选用 <a href="https://www.jetbrains.com/teamcity/?fromMenu" target="_blank" rel="external">TeamCity</a>，奈何这货依然秉承无中文版的优良传统，看了一下稍嫌头大，决定先用 <a href="https://jenkins.io" target="_blank" rel="external">Jenkins</a> 来体验一把。</p>
+<p>Jenkins 给我的第一印象就很简单，下载 war 文件后直接一行命令启动: <code>java -jar jenkins.war</code></p>
+<p>默认端口<code>localhost:8080</code></p>
+<p>然后就可以用这把牛刀杀小鸡了——我只想完成开始提到的那个小小的偷懒的要求，就是自动 pull 最新代码。</p>
+<h3 id="安装-Github-Plugin"><a href="#安装-Github-Plugin" class="headerlink" title="安装 Github Plugin"></a>安装 Github Plugin</h3><p>那么安装插件吧，在<code>系统管理 &gt; 管理插件</code>中查看可选插件，安装 Github Plugin,会自动安装这个插件依赖的其他插件，完成后地址栏中输入<code>http://localhost:8080/restart</code>重启。</p>
+<h3 id="设置全局变量"><a href="#设置全局变量" class="headerlink" title="设置全局变量"></a>设置全局变量</h3><p>进入<code>系统管理 &gt; 系统设置</code>，设置JAVA_HOME和Git.exe所在的文件位置。</p>
+<h3 id="打开认证机制"><a href="#打开认证机制" class="headerlink" title="打开认证机制"></a>打开认证机制</h3><p>进入<code>系统管理 &gt; Configure Global Security</code>,选取<code>启用安全</code>，<code>安全域</code>选择<code>Jenkins专有用户数据库</code>，根据自身需要设置<code>授权策略</code>。</p>
 
             
         </div>
@@ -207,7 +208,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">标签</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Mac/">Mac</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/持续集成/">持续集成</a>
 
             </div>
         
@@ -216,7 +217,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/06/Jenkins-Git-持续集成初探/"  data-tooltip="Jenkins + Git 持续集成初探">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -224,7 +225,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/30/公司移动开发技术发展整理/" data-tooltip="公司移动开发技术发展整理">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/04/Mac-配置-Apache-MySQL-PHP/" data-tooltip="Mac 配置 Apache+MySQL+PHP">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -239,17 +240,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/04/Mac-配置-Apache-MySQL-PHP/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/04/Mac-配置-Apache-MySQL-PHP/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/04/Mac-配置-Apache-MySQL-PHP/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -316,7 +317,7 @@ s.setAttribute('data-timestamp', +new Date());
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/06/Jenkins-Git-持续集成初探/"  data-tooltip="Jenkins + Git 持续集成初探">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -324,7 +325,7 @@ s.setAttribute('data-timestamp', +new Date());
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/30/公司移动开发技术发展整理/" data-tooltip="公司移动开发技术发展整理">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/04/Mac-配置-Apache-MySQL-PHP/" data-tooltip="Mac 配置 Apache+MySQL+PHP">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -339,17 +340,17 @@ s.setAttribute('data-timestamp', +new Date());
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/04/Mac-配置-Apache-MySQL-PHP/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/04/Mac-配置-Apache-MySQL-PHP/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/04/Mac-配置-Apache-MySQL-PHP/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -375,17 +376,17 @@ s.setAttribute('data-timestamp', +new Date());
                 <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/04/Mac-配置-Apache-MySQL-PHP/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/04/Mac-配置-Apache-MySQL-PHP/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/04/Mac-配置-Apache-MySQL-PHP/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
@@ -433,9 +434,9 @@ s.setAttribute('data-timestamp', +new Date());
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://yoursite.com/2016/06/04/Mac-配置-Apache-MySQL-PHP/';
+                 this.page.url = 'http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/';
                  
-                    this.page.identifier = '2016/06/04/Mac-配置-Apache-MySQL-PHP/';
+                    this.page.identifier = '2016/06/06/Jenkins-Git-持续集成初探/';
                                   
              };
             (function() {
