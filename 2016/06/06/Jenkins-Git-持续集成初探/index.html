@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/index.html">
 <meta property="og:site_name" content="JeanKK的博客">
 <meta property="og:description" content="新项目用 Git 和 Coding 的私有仓库进行代码管理，不想每次本地提交后还要登录服务器去 pull, 原计划用 Coding 的 Webhook 来启动服务器脚本自动拉取最新代码，整了半天未遂，一怒之下决定找个持续集成框架来弄。">
-<meta property="og:updated_time" content="2016-06-13T15:57:44.000Z">
+<meta property="og:updated_time" content="2016-06-15T13:37:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jenkins + Git 持续集成初探">
 <meta name="twitter:description" content="新项目用 Git 和 Coding 的私有仓库进行代码管理，不想每次本地提交后还要登录服务器去 pull, 原计划用 Coding 的 Webhook 来启动服务器脚本自动拉取最新代码，整了半天未遂，一怒之下决定找个持续集成框架来弄。">
@@ -197,7 +197,7 @@
 <p>默认端口<code>localhost:8080</code></p>
 <p>然后就可以用这把牛刀杀小鸡了——我只想完成开始提到的那个小小的偷懒的要求，就是自动 pull 最新代码。</p>
 <h3 id="安装-Github-Plugin"><a href="#安装-Github-Plugin" class="headerlink" title="安装 Github Plugin"></a>安装 Github Plugin</h3><p>那么安装插件吧，在<code>系统管理 &gt; 管理插件</code>中查看可选插件，安装 Github Plugin,会自动安装这个插件依赖的其他插件，完成后地址栏中输入<code>http://localhost:8080/restart</code>重启。</p>
-<h3 id="设置全局变量"><a href="#设置全局变量" class="headerlink" title="设置全局变量"></a>设置全局变量</h3><p>进入<code>系统管理 &gt; 系统设置</code>，设置 JAVA_HOME 和 Git.exe 所在的文件位置。</p>
+<h3 id="设置全局变量"><a href="#设置全局变量" class="headerlink" title="设置全局变量"></a>设置全局变量</h3><p>进入<code>系统管理 &gt; 系统设置</code>，设置 JAVA_HOME 和 git.exe 所在的文件位置。</p>
 <h3 id="打开认证机制"><a href="#打开认证机制" class="headerlink" title="打开认证机制"></a>打开认证机制</h3><p>进入<code>系统管理 &gt; Configure Global Security</code>,选取<code>启用安全</code>，<code>安全域</code>选择<code>Jenkins 专有用户数据库</code>，根据自身需要设置<code>授权策略</code>。</p>
 
             
