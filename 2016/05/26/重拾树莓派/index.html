@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/05/26/重拾树莓派/index.html">
 <meta property="og:site_name" content="JeanKK的博客">
 <meta property="og:description" content="去年就入手了树莓派2，装了 Raspbian Wheezy 后感觉系统极不稳定，经常无故重启，后来 Win 10出了 IoT 版本后又试了一下，不知道为啥一直无法识别网络连接，就一直闲置在那儿。">
-<meta property="og:updated_time" content="2016-06-07T15:18:38.000Z">
+<meta property="og:updated_time" content="2016-11-28T05:28:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重拾树莓派">
 <meta name="twitter:description" content="去年就入手了树莓派2，装了 Raspbian Wheezy 后感觉系统极不稳定，经常无故重启，后来 Win 10出了 IoT 版本后又试了一下，不知道为啥一直无法识别网络连接，就一直闲置在那儿。">
@@ -211,11 +211,9 @@
 <p>修改 <code>PermitRootLogin without-password</code> 为 <code>PermitRootLogin yes</code></p>
 <p>保存后，使用 reboot 命令重启树莓派，</p>
 <p>使用 pi@raspeberry 登录后，<code>su</code>输入前面设置的密码登录 root 账户</p>
-<h2 id="设置树莓派外网-SSH-连接"><a href="#设置树莓派外网-SSH-连接" class="headerlink" title="设置树莓派外网 SSH 连接"></a>设置树莓派外网 SSH 连接</h2><h3 id="配置-ngrok-反向代理"><a href="#配置-ngrok-反向代理" class="headerlink" title="配置 ngrok 反向代理"></a>配置 ngrok 反向代理</h3><p>ngrok 官方的服务已经被墙，我用的是国内的服务 <a href="http://www.ngrok.cc" target="_blank" rel="external">ngrok.cc</a>,</p>
-<p>下载 <a href="http://www.ngrok.cc/client/linux_arm.zip" target="_blank" rel="external">Linux ARM 版本</a>，然后<a href="http://www.ngrok.cc/login" target="_blank" rel="external">注册账号</a>，登陆后在域名列表中新增 TCP 转发，输入一个想要转发的端口号（如果提示被占用则说明其他注册的用户使用了这个端口号，换一个就好，被这个小坑了一发）。</p>
-<p>进入安装包解压后的文件夹编辑配置文件：<code>vim ngrok.cfg</code></p>
-<p>修改<code>ssh:</code>下<code>remote_port</code>为刚才新增 TCP 转发中所设置的端口号，然后保存退出。</p>
-<p>启动 ssh 的 tunnel:<code>./ngrok -config ngrok.cfg start ssh</code></p>
+<h2 id="设置树莓派外网-SSH-连接"><a href="#设置树莓派外网-SSH-连接" class="headerlink" title="设置树莓派外网 SSH 连接"></a>设置树莓派外网 SSH 连接</h2><h3 id="配置-ngrok-反向代理"><a href="#配置-ngrok-反向代理" class="headerlink" title="配置 ngrok 反向代理"></a>配置 ngrok 反向代理</h3><p>ngrok 官方的服务已经被墙，翻墙使用过后发现如果是免费用户，每次生成的是随机id，很不方便。寻找过后，使用国内的服务 <a href="http://www.ngrok.cc" target="_blank" rel="external">ngrok.cc</a>。</p>
+<p>下载 <a href="http://hls.ctopus.com/sunny/linux_arm.zip" target="_blank" rel="external">Linux ARM 版本</a>，然后<a href="http://www.ngrok.cc/login" target="_blank" rel="external">注册账号</a>，登陆后在域名列表中新增 TCP 转发，输入一个想要转发的端口号（如果提示被占用则说明其他注册的用户使用了这个端口号，换一个就好，被这个小坑了一发）。</p>
+<p>经过几次改进后，现在已经不需要再配置port等内容，直接解压下载文件在树莓派上运行<code>./sunny clientid [clientid]</code>即可运行</p>
 <p>若 Tunnel Status 显示为 online,即表示已配置成功，可通过<code>ssh root@server.ngrok.cc -p****</code>进行远程 ssh 访问，<em>**</em>为设置的 TCP 转发端口号。</p>
 
             
