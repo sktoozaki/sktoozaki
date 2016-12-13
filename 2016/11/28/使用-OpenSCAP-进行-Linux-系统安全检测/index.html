@@ -6,29 +6,26 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="JeanKK的博客">
-    <title>Jenkins + Git 持续集成初探 - JeanKK的博客</title>
+    <title>使用 OpenSCAP 进行 Linux 系统安全检测 - JeanKK的博客</title>
     <meta name="author" content="JeanKK">
     
     
     
-    <meta name="description" content="新项目用 Git 和 Coding 的私有仓库进行代码管理，不想每次本地提交后还要登录服务器去 pull, 原计划用 Coding 的 Webhook 来启动服务器脚本自动拉取最新代码，整了半天未遂，一怒之下决定找个持续集成框架来弄。">
+    <meta name="description">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Jenkins + Git 持续集成初探">
-<meta property="og:url" content="http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/index.html">
+<meta property="og:title" content="使用 OpenSCAP 进行 Linux 系统安全检测">
+<meta property="og:url" content="http://yoursite.com/2016/11/28/使用-OpenSCAP-进行-Linux-系统安全检测/index.html">
 <meta property="og:site_name" content="JeanKK的博客">
-<meta property="og:description" content="新项目用 Git 和 Coding 的私有仓库进行代码管理，不想每次本地提交后还要登录服务器去 pull, 原计划用 Coding 的 Webhook 来启动服务器脚本自动拉取最新代码，整了半天未遂，一怒之下决定找个持续集成框架来弄。">
-<meta property="og:updated_time" content="2016-12-12T07:54:41.000Z">
+<meta property="og:description">
+<meta property="og:updated_time" content="2016-11-28T05:54:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jenkins + Git 持续集成初探">
-<meta name="twitter:description" content="新项目用 Git 和 Coding 的私有仓库进行代码管理，不想每次本地提交后还要登录服务器去 pull, 原计划用 Coding 的 Webhook 来启动服务器脚本自动拉取最新代码，整了半天未遂，一怒之下决定找个持续集成框架来弄。">
+<meta name="twitter:title" content="使用 OpenSCAP 进行 Linux 系统安全检测">
+<meta name="twitter:description">
     
     
         
     
     
-    
-        <meta property="og:image" content="https://jenkins.io/images/226px-Jenkins_logo.svg.png"/>
-        <meta class="swiftype" name="image" data-type="enum" content="https://jenkins.io/images/226px-Jenkins_logo.svg.png" />
     
     
     
@@ -169,56 +166,33 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Jenkins + Git 持续集成初探
+            使用 OpenSCAP 进行 Linux 系统安全检测
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Mon Jun 06 2016 22:48:28 GMT+0800">
+    <time itemprop="datePublished" content="Mon Nov 28 2016 13:54:12 GMT+0800">
 	
-		    6月 06, 2016
+		    11月 28, 2016
     	
     </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/技术/">技术</a>
-
-
     
 </div>
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>新项目用 Git 和 Coding 的私有仓库进行代码管理，不想每次本地提交后还要登录服务器去 pull, 原计划用 Coding 的 Webhook 来启动服务器脚本自动拉取最新代码，整了半天未遂，一怒之下决定找个持续集成框架来弄。</p>
-<a id="more"></a>
-<p>作为 JetBrains 的脑残粉，首先是打算选用 <a href="https://www.jetbrains.com/teamcity/?fromMenu" target="_blank" rel="external">TeamCity</a>，奈何这货依然秉承无中文版的优良传统，看了一下稍嫌头大，决定先用 <a href="https://jenkins.io" target="_blank" rel="external">Jenkins</a> 来体验一把。</p>
-<p>Jenkins 给我的第一印象就很简单，下载 war 文件后直接一行命令启动: <code>java -jar jenkins.war</code></p>
-<p>默认端口<code>localhost:8080</code></p>
-<p>然后就可以用这把牛刀杀小鸡了——我只想完成开始提到的那个小小的偷懒的要求，就是自动 pull 最新代码。</p>
-<h3 id="关闭Jenkins"><a href="#关闭Jenkins" class="headerlink" title="关闭Jenkins"></a>关闭Jenkins</h3><p>关闭Jenkins只要在url后面添加<code>/exit</code>即可。<br>在这个过程中点击<code>Try Posting</code>后，有可能会出现<code>No valid crumb was included in the request</code>的报错，这是因为Jenkins在http请求头部中放置了一个名为.crumb的token。如果在Jenkins设置中勾选了<code>防止跨站点请求伪造</code>此token会被apache认为是不合法头部而去掉。解决办法有两种，一种就是在apache中设置<code>ignore_invalid_headers</code>，另一种就是直接在Jenkins中取消勾选。</p>
-<h3 id="安装-Github-Plugin"><a href="#安装-Github-Plugin" class="headerlink" title="安装 Github Plugin"></a>安装 Github Plugin</h3><p>那么安装插件吧，在<code>系统管理 &gt; 管理插件</code>中查看可选插件，安装 Github Plugin,会自动安装这个插件依赖的其他插件，完成后地址栏中输入<code>http://localhost:8080/restart</code>重启。</p>
-<h3 id="设置全局变量"><a href="#设置全局变量" class="headerlink" title="设置全局变量"></a>设置全局变量</h3><p>进入<code>系统管理 &gt; 系统设置</code>，设置 JAVA_HOME 和 git.exe 所在的文件位置。</p>
-<h3 id="打开认证机制"><a href="#打开认证机制" class="headerlink" title="打开认证机制"></a>打开认证机制</h3><p>进入<code>系统管理 &gt; Configure Global Security</code>,选取<code>启用安全</code>，<code>安全域</code>选择<code>Jenkins 专有用户数据库</code>，根据自身需要设置<code>授权策略</code>。</p>
-
+            
             
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
-        
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">标签</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/tags/持续集成/">持续集成</a>
-
-            </div>
         
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/11/28/使用-OpenSCAP-进行-Linux-系统安全检测/"  data-tooltip="使用 OpenSCAP 进行 Linux 系统安全检测">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/11/28/Mac配置Python多版本环境/"  data-tooltip="Mac配置Python多版本环境">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -226,7 +200,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/04/Mac-配置-Apache-MySQL-PHP/" data-tooltip="Mac 配置 Apache+MySQL+PHP">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/06/Jenkins-Git-持续集成初探/" data-tooltip="Jenkins + Git 持续集成初探">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -241,17 +215,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/11/28/使用-OpenSCAP-进行-Linux-系统安全检测/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/11/28/使用-OpenSCAP-进行-Linux-系统安全检测/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/11/28/使用-OpenSCAP-进行-Linux-系统安全检测/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -318,7 +292,7 @@ s.setAttribute('data-timestamp', +new Date());
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/11/28/使用-OpenSCAP-进行-Linux-系统安全检测/"  data-tooltip="使用 OpenSCAP 进行 Linux 系统安全检测">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/11/28/Mac配置Python多版本环境/"  data-tooltip="Mac配置Python多版本环境">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -326,7 +300,7 @@ s.setAttribute('data-timestamp', +new Date());
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/04/Mac-配置-Apache-MySQL-PHP/" data-tooltip="Mac 配置 Apache+MySQL+PHP">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/06/Jenkins-Git-持续集成初探/" data-tooltip="Jenkins + Git 持续集成初探">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -341,17 +315,17 @@ s.setAttribute('data-timestamp', +new Date());
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/11/28/使用-OpenSCAP-进行-Linux-系统安全检测/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/11/28/使用-OpenSCAP-进行-Linux-系统安全检测/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/11/28/使用-OpenSCAP-进行-Linux-系统安全检测/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -377,17 +351,17 @@ s.setAttribute('data-timestamp', +new Date());
                 <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/11/28/使用-OpenSCAP-进行-Linux-系统安全检测/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/11/28/使用-OpenSCAP-进行-Linux-系统安全检测/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/11/28/使用-OpenSCAP-进行-Linux-系统安全检测/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
@@ -435,9 +409,9 @@ s.setAttribute('data-timestamp', +new Date());
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://yoursite.com/2016/06/06/Jenkins-Git-持续集成初探/';
+                 this.page.url = 'http://yoursite.com/2016/11/28/使用-OpenSCAP-进行-Linux-系统安全检测/';
                  
-                    this.page.identifier = '2016/06/06/Jenkins-Git-持续集成初探/';
+                    this.page.identifier = '2016/11/28/使用-OpenSCAP-进行-Linux-系统安全检测/';
                                   
              };
             (function() {
