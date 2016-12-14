@@ -6,21 +6,27 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="JeanKK的博客">
-    <title>CentOS最小化安装配置 - JeanKK的博客</title>
+    <title>使用psutil来监控进程 - JeanKK的博客</title>
     <meta name="author" content="JeanKK">
     
     
     
-    <meta name="description" content="安装wget：yum install wget -y替换yum仓库为网易镜像：">
+    <meta name="description" content="Psutil 是一个功能强大的 Python 模块，可用于监控多个平台的系统和信息进程。
+安装非常简单，执行pip install psutil，然后进入 Python 交互式环境，&amp;gt;&amp;gt;import psuti后执行psutil.pids()查看系统当前所有进程信息来确认安装是否成功。
+在使用的过程中，发现 psutil 在 OS X 系统下不支持查询进程 io_counters 信息">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="CentOS最小化安装配置">
-<meta property="og:url" content="http://yoursite.com/2016/12/07/CentOS最小化安装配置/index.html">
+<meta property="og:title" content="使用psutil来监控进程">
+<meta property="og:url" content="http://yoursite.com/2016/12/14/使用psutil来监控进程/index.html">
 <meta property="og:site_name" content="JeanKK的博客">
-<meta property="og:description" content="安装wget：yum install wget -y替换yum仓库为网易镜像：">
-<meta property="og:updated_time" content="2016-12-07T15:24:32.000Z">
+<meta property="og:description" content="Psutil 是一个功能强大的 Python 模块，可用于监控多个平台的系统和信息进程。
+安装非常简单，执行pip install psutil，然后进入 Python 交互式环境，&amp;gt;&amp;gt;import psuti后执行psutil.pids()查看系统当前所有进程信息来确认安装是否成功。
+在使用的过程中，发现 psutil 在 OS X 系统下不支持查询进程 io_counters 信息">
+<meta property="og:updated_time" content="2016-12-14T07:41:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS最小化安装配置">
-<meta name="twitter:description" content="安装wget：yum install wget -y替换yum仓库为网易镜像：">
+<meta name="twitter:title" content="使用psutil来监控进程">
+<meta name="twitter:description" content="Psutil 是一个功能强大的 Python 模块，可用于监控多个平台的系统和信息进程。
+安装非常简单，执行pip install psutil，然后进入 Python 交互式环境，&amp;gt;&amp;gt;import psuti后执行psutil.pids()查看系统当前所有进程信息来确认安装是否成功。
+在使用的过程中，发现 psutil 在 OS X 系统下不支持查询进程 io_counters 信息">
     
     
         
@@ -166,13 +172,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            CentOS最小化安装配置
+            使用psutil来监控进程
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Dec 07 2016 09:11:48 GMT+0800">
+    <time itemprop="datePublished" content="Wed Dec 14 2016 15:27:19 GMT+0800">
 	
-		    12月 07, 2016
+		    12月 14, 2016
     	
     </time>
     
@@ -187,7 +193,9 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>安装wget：<code>yum install wget -y</code><br>替换yum仓库为网易镜像：</p>
+            <p><a href="https://github.com/giampaolo/psutil/blob/master/INSTALL.rst" target="_blank" rel="external">Psutil</a> 是一个功能强大的 Python 模块，可用于监控多个平台的系统和信息进程。</p>
+<p>安装非常简单，执行<code>pip install psutil</code>，然后进入 Python 交互式环境，<code>&gt;&gt;import psuti</code>后执行<code>psutil.pids()</code>查看系统当前所有进程信息来确认安装是否成功。</p>
+<p>在使用的过程中，发现 psutil 在 OS X 系统下不支持查询进程 io_counters 信息。</p>
 
             
         </div>
@@ -197,7 +205,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">标签</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/CentOS/">CentOS</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Python/">Python</a>
 
             </div>
         
@@ -206,7 +214,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/12/14/使用psutil来监控进程/"  data-tooltip="使用psutil来监控进程">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -214,7 +222,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/11/28/Mac配置Python多版本环境/" data-tooltip="Mac配置Python多版本环境">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/12/07/CentOS最小化安装配置/" data-tooltip="CentOS最小化安装配置">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -229,17 +237,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/12/07/CentOS最小化安装配置/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/12/14/使用psutil来监控进程/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/12/07/CentOS最小化安装配置/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/12/14/使用psutil来监控进程/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/12/07/CentOS最小化安装配置/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/12/14/使用psutil来监控进程/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -306,7 +314,7 @@ s.setAttribute('data-timestamp', +new Date());
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/12/14/使用psutil来监控进程/"  data-tooltip="使用psutil来监控进程">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -314,7 +322,7 @@ s.setAttribute('data-timestamp', +new Date());
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/11/28/Mac配置Python多版本环境/" data-tooltip="Mac配置Python多版本环境">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/12/07/CentOS最小化安装配置/" data-tooltip="CentOS最小化安装配置">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -329,17 +337,17 @@ s.setAttribute('data-timestamp', +new Date());
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/12/07/CentOS最小化安装配置/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/12/14/使用psutil来监控进程/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/12/07/CentOS最小化安装配置/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/12/14/使用psutil来监控进程/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/12/07/CentOS最小化安装配置/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/12/14/使用psutil来监控进程/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -365,17 +373,17 @@ s.setAttribute('data-timestamp', +new Date());
                 <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/12/07/CentOS最小化安装配置/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/12/14/使用psutil来监控进程/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/12/07/CentOS最小化安装配置/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/12/14/使用psutil来监控进程/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/12/07/CentOS最小化安装配置/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/12/14/使用psutil来监控进程/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
@@ -423,9 +431,9 @@ s.setAttribute('data-timestamp', +new Date());
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://yoursite.com/2016/12/07/CentOS最小化安装配置/';
+                 this.page.url = 'http://yoursite.com/2016/12/14/使用psutil来监控进程/';
                  
-                    this.page.identifier = '2016/12/07/CentOS最小化安装配置/';
+                    this.page.identifier = '2016/12/14/使用psutil来监控进程/';
                                   
              };
             (function() {
