@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/05/26/重拾树莓派/index.html">
 <meta property="og:site_name" content="JeanKK的博客">
 <meta property="og:description" content="去年就入手了树莓派2，装了 Raspbian Wheezy 后感觉系统极不稳定，经常无故重启，后来 Win 10出了 IoT 版本后又试了一下，不知道为啥一直无法识别网络连接，就一直闲置在那儿。">
-<meta property="og:updated_time" content="2016-12-13T07:38:50.000Z">
+<meta property="og:updated_time" content="2016-12-14T14:22:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重拾树莓派">
 <meta name="twitter:description" content="去年就入手了树莓派2，装了 Raspbian Wheezy 后感觉系统极不稳定，经常无故重启，后来 Win 10出了 IoT 版本后又试了一下，不知道为啥一直无法识别网络连接，就一直闲置在那儿。">
@@ -193,6 +193,8 @@
             <p>去年就入手了树莓派2，装了 Raspbian Wheezy 后感觉系统极不稳定，经常无故重启，后来 Win 10出了 IoT 版本后又试了一下，不知道为啥一直无法识别网络连接，就一直闲置在那儿。</p>
 <a id="more"></a>
 <p>最近在整服务器的持续集成和自动部署的时候，忽然想起可以把树莓派拿来作为测试服务器，看了一下 Raspbian 的系统有了一个大的更新，现在是 Raspbian Jessie，于是决定拿来试一下，顺便记录一下整个过程。</p>
+<h2 id="替换-apt-get-源"><a href="#替换-apt-get-源" class="headerlink" title="替换 apt-get 源"></a>替换 apt-get 源</h2><p><code>sudo vi /etc/apt/sources.list</code></p>
+<p>修改<code>mirrordirector.raspbian.org</code>为<code>mirrors.aliyun.com/raspbian</code></p>
 <h2 id="安装-oh-my-zsh"><a href="#安装-oh-my-zsh" class="headerlink" title="安装 oh-my-zsh"></a>安装 oh-my-zsh</h2><p>首先安装 zsh：<code>sudo apt-get install zsh</code></p>
 <p>安装 oh-my-zsh:</p>
 <p><code>sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code></p>
