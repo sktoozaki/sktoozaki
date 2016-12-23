@@ -11,22 +11,16 @@
     
     
     
-    <meta name="description" content="Psutil 是一个功能强大的 Python 模块，可用于监控多个平台的系统和信息进程。
-安装非常简单，执行pip install psutil，然后进入 Python 交互式环境，&amp;gt;&amp;gt;import psuti后执行psutil.pids()查看系统当前所有进程信息来确认安装是否成功。
-在使用的过程中，发现 psutil 在 OS X 系统下不支持查询进程 io_counters 信息">
+    <meta name="description" content="Psutil 是一个功能强大的 Python 模块，可用于监控多个平台的系统和信息进程。">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="使用psutil来监控进程">
 <meta property="og:url" content="http://yoursite.com/2016/12/14/使用psutil来监控进程/index.html">
 <meta property="og:site_name" content="JeanKK的博客">
-<meta property="og:description" content="Psutil 是一个功能强大的 Python 模块，可用于监控多个平台的系统和信息进程。
-安装非常简单，执行pip install psutil，然后进入 Python 交互式环境，&amp;gt;&amp;gt;import psuti后执行psutil.pids()查看系统当前所有进程信息来确认安装是否成功。
-在使用的过程中，发现 psutil 在 OS X 系统下不支持查询进程 io_counters 信息">
-<meta property="og:updated_time" content="2016-12-14T07:41:23.000Z">
+<meta property="og:description" content="Psutil 是一个功能强大的 Python 模块，可用于监控多个平台的系统和信息进程。">
+<meta property="og:updated_time" content="2016-12-23T06:58:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用psutil来监控进程">
-<meta name="twitter:description" content="Psutil 是一个功能强大的 Python 模块，可用于监控多个平台的系统和信息进程。
-安装非常简单，执行pip install psutil，然后进入 Python 交互式环境，&amp;gt;&amp;gt;import psuti后执行psutil.pids()查看系统当前所有进程信息来确认安装是否成功。
-在使用的过程中，发现 psutil 在 OS X 系统下不支持查询进程 io_counters 信息">
+<meta name="twitter:description" content="Psutil 是一个功能强大的 Python 模块，可用于监控多个平台的系统和信息进程。">
     
     
         
@@ -194,8 +188,11 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <p><a href="https://github.com/giampaolo/psutil/blob/master/INSTALL.rst" target="_blank" rel="external">Psutil</a> 是一个功能强大的 Python 模块，可用于监控多个平台的系统和信息进程。</p>
+<a id="more"></a>
 <p>安装非常简单，执行<code>pip install psutil</code>，然后进入 Python 交互式环境，<code>&gt;&gt;import psuti</code>后执行<code>psutil.pids()</code>查看系统当前所有进程信息来确认安装是否成功。</p>
-<p>在使用的过程中，发现 psutil 在 OS X 系统下不支持查询进程 io_counters 信息。</p>
+<p>Psutil 不支持查询 OS X 系统中的 io_counters 信息，在 Debian 和 CentOS 系统中支持。在检测到僵尸进程后会将其视为异常信息抛出，所以需要进行处理。</p>
+<p>根据实际需要完成脚本的编写后，使用 crontab 进行周期运行处理，并将结果重定向至文本文件保存<code>* * * * * /usr/bin/env python /root/monitor.py &amp;&gt;&gt;/root/output</code>。</p>
+<p>还可以利用 python 的 smtplib 在关键进程异常的时候发送邮件，并在脚本中对其进行重启。</p>
 
             
         </div>
